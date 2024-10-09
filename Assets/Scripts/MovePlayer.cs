@@ -40,6 +40,7 @@ public class MovePlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("kill"))
         {
             retryButton.SetActive(true);
+            deathMenu.ActiveScreenLose();
             Time.timeScale = 0f;
         }
     }
@@ -48,14 +49,7 @@ public class MovePlayer : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("kill"))
-        {
-            deathMenu.ActiveScreenLose();
-
-        }
-    }
+   
 }
 
 
